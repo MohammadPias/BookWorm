@@ -2,9 +2,16 @@ import React from 'react';
 import banner from '../../images/banner2.jpg';
 import { useForm } from "react-hook-form";
 import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useFirebase from '../Hooks/useFirebase';
 
 const Signin = () => {
+    const { handleEmailPassSignup } = useFirebase();
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const destination = location?.state?.from || '/';
+
     const bg = {
         background: `url(${banner})`,
         height: "100vh",
@@ -13,7 +20,27 @@ const Signin = () => {
         backgroundRepeat: 'no-repeat'
     };
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        const name = data.name;
+        const email = data.email;
+        const password = data.password;
+        const password2 = data.password2;
+        const newData = {
+            displayName: data.name,
+            email: data.email
+        };
+
+
+
+
+
+        if (password === password2) {
+            handleEmailPassSignup(name, email, password, navigate, destination)
+        }
+        else {
+            alert("Password don't match")
+        }
+    };
     return (
         <div style={bg} className="d-flex align-items-center justify-content-center">
             <div className='formContainer'>
