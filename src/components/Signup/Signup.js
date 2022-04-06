@@ -6,11 +6,15 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useFirebase from '../Hooks/useFirebase';
 
 const Signin = () => {
-    const { handleEmailPassSignup } = useFirebase();
+    const { handleEmailPassSignup, handleGoogleSignin } = useFirebase();
 
     const navigate = useNavigate();
     const location = useLocation();
     const destination = location?.state?.from || '/';
+
+    const handleGoogleLogin = () => {
+        handleGoogleSignin(navigate, location)
+    }
 
     const bg = {
         background: `url(${banner})`,
@@ -29,13 +33,17 @@ const Signin = () => {
             displayName: data.name,
             email: data.email
         };
-
-
-
-
-
         if (password === password2) {
             handleEmailPassSignup(name, email, password, navigate, destination)
+            fetch('http://localhost:5000/user', {
+                method: "POST",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(newData)
+            }).then(res => {
+
+            })
         }
         else {
             alert("Password don't match")
@@ -59,7 +67,7 @@ const Signin = () => {
                 <p className='mt-3'>Already have an account?<Link to="/login">  Login</Link> </p>
                 <h6>------or------</h6>
 
-                <Button variant='light' className='w-100 rounded-pill border'>
+                <Button onClick={handleGoogleLogin} variant='light' className='w-100 rounded-pill border'>
                     <img className='me-3' src="https://img.icons8.com/color/25/000000/google-logo.png" alt='' />
                     Signin with google
                 </Button>

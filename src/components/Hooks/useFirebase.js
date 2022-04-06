@@ -26,7 +26,16 @@ const useFirebase = () => {
         signInWithPopup(auth, GoogleProvider)
             .then((result) => {
                 setUser(result.user)
+                const name = result.user.displayName;
+                const email = result.user.email;
+                fetch('http://localhost:5000/user', {
+                    method: 'POST',
+                    headers: { 'content-type': 'application/json' },
+                    body: JSON.stringify({ displayName: name, email: email })
+                })
+
                 navigate(destination)
+                setError('')
             })
             .catch((error) => {
                 setError(error.message)
@@ -38,16 +47,15 @@ const useFirebase = () => {
         setLodding(true)
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                setUser(userCredential.user);
-                setError('');
-                navigate(destination);
                 updateProfile(auth.currentUser, {
                     displayName: name
                 }).then(result => {
-
                 }).catch((error) => {
-
                 });
+
+                setUser(userCredential.user);
+                setError('');
+                navigate('/login');
             })
             .catch((error) => {
                 setError(error.message)

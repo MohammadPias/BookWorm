@@ -5,7 +5,6 @@ import useFirebase from '../../Hooks/useFirebase';
 
 const TopNav = () => {
     const { handleSignOut, user } = useFirebase();
-    console.log(user.email)
     return (
         <Navbar collapseOnSelect expand="lg" bg="transparent" variant="light">
             <Container>
@@ -18,11 +17,11 @@ const TopNav = () => {
                     </Nav>
                     <Nav>
                         <Nav.Link href="#deets">More deets</Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">
-                            Dank memes
+                        <Nav.Link as={Link} to="/dashboard">
+                            Dashboard
                         </Nav.Link>
-                        <Nav.Link href="#memes">
-                            {user?.email}
+                        <Nav.Link>
+                            {user?.displayName}
                         </Nav.Link>
                         {
                             user?.email ?
