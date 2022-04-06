@@ -1,8 +1,8 @@
 import React from 'react';
+import Books from '../../Discover/AllBooks/Books';
 import Footer from '../../shared/Footer/Footer';
 import Header from '../../shared/Header/Header';
 import About from '../AboutUs/About';
-import Books from '../Books/Books';
 
 const Home = () => {
     return (

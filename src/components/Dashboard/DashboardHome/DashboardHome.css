@@ -1,8 +1,9 @@
 .bg {
-    background-color: #deeeff;
+    /* border: 1px solid grey; */
 }
 
 .side-link {
-    background-color: #baddff;
-    margin-top: 5px;
+    /* background-color: #baddff; */
+
+    border-bottom: 1px solid rgb(190, 189, 189) !important;
 }

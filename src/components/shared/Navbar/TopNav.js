@@ -16,7 +16,7 @@ const TopNav = () => {
                         <Nav.Link href="#pricing">Pricing</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#deets">More deets</Nav.Link>
+                        <Nav.Link as={Link} to="/discover">Discover</Nav.Link>
                         <Nav.Link as={Link} to="/dashboard">
                             Dashboard
                         </Nav.Link>
