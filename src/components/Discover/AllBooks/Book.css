@@ -1,0 +1,30 @@
+.card:hover {
+    box-shadow: 1px 1px 3px grey;
+    transition: all .7s;
+}
+
+.book-cover {
+    overflow: hidden;
+}
+
+.book-cover img {
+    transition: all .7s;
+}
+
+.card:hover img {
+    transform: scale(1.15);
+}
+
+.color {
+    color: goldenrod;
+    font-size: 15px;
+}
+
+.custom {
+    color: gray;
+    font-size: 20px;
+}
+
+.detail-btn img {
+    width: 25px;
+}

@@ -3,19 +3,15 @@ import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useFirebase from '../../Hooks/useFirebase';
 
-const TopNav = () => {
+
+const NavMenu = () => {
     const { handleSignOut, user } = useFirebase();
     return (
-        <Navbar collapseOnSelect expand="lg" bg="transparent" variant="light">
+        <Navbar collapseOnSelect expand="lg" bg="white" variant="light" className='shadow-sm'>
             <Container>
-                <Navbar.Brand href="#home">BookWorm</Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Toggle className='mx-auto' aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link href="#features">Features</Nav.Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link>
-                    </Nav>
-                    <Nav>
+                    <Nav className="mx-auto">
                         <Nav.Link as={Link} to="/discover">Discover</Nav.Link>
                         <Nav.Link as={Link} to="/dashboard">
                             Dashboard
@@ -26,7 +22,7 @@ const TopNav = () => {
                         {
                             user?.email ?
                                 <Nav.Link>
-                                    <Button onClick={handleSignOut} className='rounded-pill' variant='secondary' size="sm">Logout</Button>
+                                    <Button onClick={handleSignOut} className='rounded-pill' variant='primary' size="sm">Logout</Button>
                                 </Nav.Link>
                                 :
                                 <>
@@ -46,4 +42,4 @@ const TopNav = () => {
     );
 };
 
-export default TopNav;
+export default NavMenu;

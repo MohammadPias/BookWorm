@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Books from './AllBooks/Books';
 import './Discover.css';
 
 const Discover = () => {
@@ -20,7 +21,8 @@ const Discover = () => {
                 </div>
                 <div className="col-lg-10">
                     <div className='book-container'>
-                        <h3>All books</h3>
+                        {/* <h3 className='text-center fw-bold'>All books</h3> */}
+                        <Books />
                     </div>
                 </div>
             </div>

@@ -11,6 +11,8 @@ import AddBooks from './components/Dashboard/AddBooks/AddBooks';
 import ManageOrder from './components/Dashboard/ManageOrder/ManageOrder';
 import { toast } from 'react-toastify';
 import Discover from './components/Discover/Discover';
+import Details from './components/Details/Details';
+
 
 toast.configure()
 function App() {
@@ -20,6 +22,8 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='login' element={<Signin />} />
         <Route path='signup' element={<Signup />} />
+        <Route path='details/:bookId' element={<Details />} />
+
         <Route path='discover' element={<Discover />} >
 
         </Route>
