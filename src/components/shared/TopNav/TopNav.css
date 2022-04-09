@@ -30,8 +30,28 @@
 
 }
 
+.shopping-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    /* border-radius: 50%; */
+}
+
+.count {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    padding: 12px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 .icon-custom {
     font-size: 25px;
-    margin-left: 20px;
     color: grey;
 }

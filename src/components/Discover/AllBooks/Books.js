@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Spinner } from 'react-bootstrap';
+import { Container, Spinner } from 'react-bootstrap';
 import Book from './Book';
 
 const Books = () => {
@@ -16,7 +16,7 @@ const Books = () => {
             <h3 className='text-center fw-bold'>Books</h3>
             {
                 books.length === 0 ?
-                    <div className='mx-auto'>
+                    <div className='mx-auto w-25 d-flex justify-content-center'>
                         <Spinner animation="border" />
                     </div>
                     :

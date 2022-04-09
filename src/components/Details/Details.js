@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Rating from 'react-rating';
 import { Button } from 'react-bootstrap';
-import cart from '../../images/cart.png';
 import heart from '../../images/heart.png';
+import { addToDb } from '../Hooks/AddToDb';
 
 const Details = () => {
     const { bookId } = useParams();
@@ -45,7 +45,7 @@ const Details = () => {
                             </p>
                         </div>
                         <div className='d-flex justify-content-between detail-btn my-4'>
-                            <Link to={`/details/${book._id}`}><Button variant='primary' className="rounded-pill px-5 py-3" size='sm'>Add to cart</Button></Link>
+                            <Button onClick={() => addToDb(book._id)} variant='primary' className="rounded-pill px-5 py-3" size='sm'>Add to cart</Button>
                             <Link to="/"><img src={heart} alt='' /></Link>
                         </div>
                     </div>

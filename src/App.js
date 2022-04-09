@@ -12,21 +12,24 @@ import ManageOrder from './components/Dashboard/ManageOrder/ManageOrder';
 import { toast } from 'react-toastify';
 import Discover from './components/Discover/Discover';
 import Details from './components/Details/Details';
+import Cart from './components/Cart/Cart';
+import NavMenu from './components/shared/Navbar/NavMenu';
 
 
 toast.configure()
 function App() {
   return (
     <div>
+      <NavMenu />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='login' element={<Signin />} />
         <Route path='signup' element={<Signup />} />
         <Route path='details/:bookId' element={<Details />} />
+        <Route path='cart' element={<Cart />} ></Route>
 
-        <Route path='discover' element={<Discover />} >
+        <Route path='discover' element={<Discover />} ></Route>
 
-        </Route>
         <Route path='dashboard' element={<DashboardHome />} >
           <Route index path='addBook' element={<AddBooks />} />
           <Route index path='order' element={<Order />} />
