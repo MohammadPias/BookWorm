@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Spinner } from 'react-bootstrap';
-import Books from './AllBooks/Books';
+import NavMenu from '../shared/Navbar/NavMenu';
 import './Discover.css';
 import DiscoverBooks from './DiscoverBooks';
 
@@ -20,6 +20,7 @@ const Discover = () => {
     }, [value])
     return (
         <div>
+            <NavMenu />
             <div className="row g-3">
                 <div className="col-lg-2 shadow-sm min-vh-100">
                     <div className='side-nav-container'>
@@ -30,7 +31,6 @@ const Discover = () => {
                             <option value="2">Computer & Internet</option>
                             <option value="3">Medicine & Health</option>
                             <option value="4">Historical Fiction</option>
-                            <option value="5">All books</option>
                         </select>
                     </div>
                 </div>
@@ -48,7 +48,7 @@ const Discover = () => {
                                         <Container>
                                             <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4'>
                                                 {
-                                                    books.slice(0, 6).map(book => <DiscoverBooks key={book._id} book={book}></DiscoverBooks>)
+                                                    books.map(book => <DiscoverBooks key={book._id} book={book}></DiscoverBooks>)
                                                 }
                                             </div>
                                         </Container>

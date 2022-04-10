@@ -12,6 +12,7 @@ const NavMenu = () => {
                 <Navbar.Toggle className='mx-auto' aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mx-auto">
+                        <Nav.Link as={Link} to="/">Home</Nav.Link>
                         <Nav.Link as={Link} to="/discover">Discover</Nav.Link>
                         <Nav.Link as={Link} to="/dashboard">
                             Dashboard

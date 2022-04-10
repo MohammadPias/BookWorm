@@ -4,6 +4,13 @@
     margin: 10px;
 }
 
+.side-nav-container select {
+    border: 1px solid rgb(221, 215, 215);
+    border-radius: 3px;
+    outline: none;
+    width: 100%;
+}
+
 .book-container {
     border: 1px solid rgb(221, 215, 215);
     border-radius: 3px;

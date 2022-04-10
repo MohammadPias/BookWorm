@@ -3,6 +3,7 @@ import { Link, Outlet } from 'react-router-dom';
 import './DashboardHome.css';
 
 import useFirebase from '../../Hooks/useFirebase';
+import NavMenu from '../../shared/Navbar/NavMenu';
 
 const DashboardHome = () => {
     const [display, setDisplay] = useState({});
@@ -19,6 +20,7 @@ const DashboardHome = () => {
     }
     return (
         <div>
+            <NavMenu />
             <div className="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left bg" style={display} id="mySidebar">
                 <button className="w3-bar-item w3-button w3-large w3-hide-large" onClick={btnClose}>Close &times;</button>
                 <Link to="/" className="w3-bar-item w3-button side-link mt-5">
@@ -27,10 +29,10 @@ const DashboardHome = () => {
                         <h6 className="ms-4">Home</h6>
                     </div>
                 </Link>
-                <Link to="order" className="w3-bar-item w3-button side-link">
+                <Link to="myOrders" className="w3-bar-item w3-button side-link">
                     <div className="d-flex align-items-center">
                         <i className="fas fa-sign-out-alt"></i>
-                        <h6 className="ms-4">Orders</h6>
+                        <h6 className="ms-4">My Orders</h6>
                     </div>
                 </Link>
                 <Link to="manageOrder" className="w3-bar-item w3-button side-link">

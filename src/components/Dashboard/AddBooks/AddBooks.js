@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';
 import "./AddBook.css";
 
 
 const AddBooks = () => {
-    const { register, handleSubmit, setValue, reset } = useForm();
+    const { register, handleSubmit, reset } = useForm();
 
     const notify = () => {
         toast.success('Book is added successfully')
