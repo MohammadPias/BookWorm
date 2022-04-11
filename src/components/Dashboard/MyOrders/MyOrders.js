@@ -31,18 +31,19 @@ const MyOrders = () => {
                             <th>Book</th>
                             <th>Price</th>
                             <th>Quantity</th>
+                            <th>action</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            /* books?.map(book =>
+                            books?.map(book =>
                                 <tr key={book._id}>
                                     <td>{book._id}</td>
                                     <td>{book.title}</td>
-                                    <td>{book.price}</td>
+                                    <td>{book.price} $</td>
                                     <td>{book.quantity}</td>
                                 </tr>
-                            ) */
+                            )
                         }
                     </tbody>
                 </Table>

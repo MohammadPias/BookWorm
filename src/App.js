@@ -26,7 +26,7 @@ function App() {
         <Route path='signup' element={<Signup />} />
         <Route path='details/:bookId' element={<Details />} />
         <Route path='cart' element={<Cart />} ></Route>
-        <Route path='order' element={<Order />} ></Route>
+        <Route path='order/:orderId' element={<Order />} ></Route>
 
         <Route path='discover' element={<Discover />} ></Route>
 

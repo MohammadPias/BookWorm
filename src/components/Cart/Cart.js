@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Card, Container, ListGroup, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -10,8 +10,7 @@ import CartAccount from './CartAccount';
 
 const Cart = () => {
     const { books,
-        setBooks } = useCart() || []
-    console.log(books)
+        setBooks } = useCart() || [];
     const [quantity, setQuantity] = useState(0);
     const [bookPrice, setBookPrice] = useState(0);
     const [title, setTitle] = useState('');
@@ -59,7 +58,7 @@ const Cart = () => {
     const handleRemove = (id) => {
         removeFromDb(id);
         toast.warn('This product has been deleted from the cart');
-        const newCart = books?.filter(book => book._id === id)
+        const newCart = books?.filter(book => book._id !== id)
         setBooks(newCart)
     }
     return (
@@ -135,7 +134,6 @@ const Cart = () => {
                             id={id}
                         />
                     </div>
-
                 </div>
             </Container>
         </div>

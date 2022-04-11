@@ -3,10 +3,9 @@ import { getStoredCart } from './AddToDb';
 
 const useCart = () => {
     const [books, setBooks] = useState([]);
-    console.log(books)
+    // console.log(books)
     useEffect(() => {
         const cart = getStoredCart();
-        console.log(cart)
         const keysProps = Object.keys(cart);
         fetch('http://localhost:5000/books/keys', {
             method: 'POST',

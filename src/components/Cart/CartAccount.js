@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Card, ListGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useCart from '../Hooks/useCart';
 
 const CartAccount = ({
     image,
@@ -12,6 +13,10 @@ const CartAccount = ({
     title,
     books,
     id }) => {
+
+    // const { books } = useCart([]);
+    // const book = books?.find(book => book._id === id);
+
     return (
         <div className="col-sm-12 col-md-4">
             <Card style={{ minWidth: '18rem' }}>
@@ -55,7 +60,7 @@ const CartAccount = ({
                     </ListGroup.Item>
                     {
                         books?.length &&
-                        <Link to='/order'><Button className='w-100'>Order</Button></Link>
+                        <Link to={`/order/${id}`}><Button className='w-100'>Order</Button></Link>
                     }
                 </ListGroup>
             </Card>
